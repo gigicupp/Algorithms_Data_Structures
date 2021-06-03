@@ -19,13 +19,27 @@
 // Space - O(1)
 
 
+// function areThereDuplicates(...args) {
+//   let obj = {};
+//   for(let arg of args) {
+//     if(obj[arg]) {
+//       return true;
+//     }
+//     obj[arg] = 1;
+//   }
+//   return false;
+// }
+
 function areThereDuplicates(...args) {
-  let obj = {};
-  for(let arg of args) {
-    if(obj[arg]) {
+  let sorted = args.sort((a, b) => a > b);
+  let start = 0;
+  let next = 1;
+  while(next < sorted.length) {
+    if(sorted[start] === sorted[next]) {
       return true;
     }
-    obj[arg] = 1;
+    start ++;
+    next ++;
   }
   return false;
 }
