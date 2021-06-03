@@ -22,6 +22,7 @@
 
 //O(n)
 function maxSubarraySum(arr, num) {
+  if(num > arr.length) return null;
   let maxSum = 0;
   let tempSum = 0;
   //sum the first n subarray
