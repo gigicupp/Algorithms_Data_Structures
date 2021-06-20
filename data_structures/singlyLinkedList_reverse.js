@@ -152,10 +152,17 @@ class SinglyLinkedList {
       node = next;
     }
     return this;
-    // [100, 200, 300]
-    //  PREV NODE NEXT
-    //  300 -> 200 -> 100 -> null
   }
+
+  print() {
+    let result = [];
+    let current = this.head;
+    while(result.length !== this.length) {
+        result.push(current.val);
+        current = current.next;
+    }
+    console.log(result);
+}
 }
 
 let list = new SinglyLinkedList();
@@ -163,5 +170,7 @@ let list = new SinglyLinkedList();
 list.push(100);
 list.push(200);
 list.push(300);
-
-console.log(list.reverse())
+list.push(400);
+console.log(list.print())
+list.reverse();
+console.log(list.print())
