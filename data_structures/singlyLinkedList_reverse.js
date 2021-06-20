@@ -141,6 +141,7 @@ class SinglyLinkedList {
     let next;
 
     //loop through the list
+    // [100, 200, 300, 400]
     for(let i = 0; i < this.length; i ++) {
       //set the next to be the next property on whatever node is
       next = node.next;
